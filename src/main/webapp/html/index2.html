@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>手语帮管理系统</title>
+    <script src="~/Content/Scripts/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<!--<div style="height: 100%; width: 100%; float: left;">-->
+    <!--<div style="height: 35%; width: 100%; float: left;"></div>-->
+    <div style="height: 30%; width: 40%; float: left;"></div>
+    <div class="login" id="container">
+        <h3 align="center">超级管理员登录</h3>
+        <div class="login_middle">
+            <div style="height: 35%; width: 100%; text-align: center; padding-top: 30px;">
+                <input id="UserName" class="input" type="text" placeholder="请输入用户名" />
+            </div>
+            <div style="height: 35%; width: 100%; text-align: center;">
+                <input id="Password" class="input" type="password" placeholder="请输入密码" />
+            </div>
+        </div>
+        <div class="login_bottom">
+            <input type="button" class="button" value="登录" onclick="sendLoginData()" />
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<style type="text/css">
+
+    #container
+    {
+        margin: 0 auto;
+        width:400px;
+        background-color: #FAFAFA;
+        border: 13px solid #A5D6A7;
+        padding: 25px;
+
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        /*!*background-image: url(../Content/Images/background.jpg);*!*/
+        /*background-repeat: no-repeat;  */
+        background-size: 100%;
+    }
+    .login {
+        float: left;
+        height: 30%;
+        width: 20%;
+        opacity: 0.8;
+
+        border-radius: 16px 16px 16px 16px;
+    }
+    /*.login_head {*/
+        /*height: 25%;*/
+        /*width: 100%;*/
+        /*color: white;*/
+        /*line-height: 200%;*/
+        /*text-align: center;*/
+        /*!*font-family: Andalus;*!*/
+        /*font-size: 38px;*/
+        /*font-weight: bold;*/
+        /*border-bottom:1px solid #FFF;*/
+        /*border-bottom-left-radius: 16px;*/
+        /*border-bottom-right-radius: 16px;*/
+    /*}*/
+    .login_middle {
+        height: 45%;
+        width: 100%;
+    }
+    .login_bottom {
+        height: 30%;
+        width: 100%;
+        padding-top: 22px;
+    }
+    .input {
+        border: 1px solid #ffd800;
+
+        height: 35px;
+        width: 78%;
+        font-family: Andalus;
+        font-size: 20px;
+        padding-left: 15px;
+    }
+    .button {
+
+        float: right;
+
+        font-size: 20px;
+        height: 40px;
+        width: 120px;
+        margin-right: 20px;
+        border-radius: 10px 10px 10px 10px;
+        font-family: Andalus;
+    }
+    .button:hover {
+        color: white;
+        float: right;
+        background-color: #808080;
+        font-size: 25px;
+        height: 40px;
+        width: 120px;
+        margin-right: 20px;
+        border-radius: 10px 10px 10px 10px;
+        font-family: Andalus;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+    //回车键按下时执行 Login
+    $("body").keydown(function (e) {
+        e = e || event;
+        if (e.keyCode == 13) {
+            sendLoginData();
+        }
+    })
+
+    //按下 Login 按钮
+    function sendLoginData() {
+        var userName = document.getElementById("UserName").value;
+        var password = document.getElementById("Password").value;
+        if (userName == "") {
+            alert("UserName不能为空！");
+            return;
+        }
+        if (password == "") {
+            alert("Password不能为空！");
+            return; }
+
+            if (userName == "18840838539" && password == "123456") {
+                window.location.href = "http://localhost:8080";
+
+        }
+        else
+            {
+                alert("用户名或密码错误！");
+
+            }
+    }
+
+</script>
